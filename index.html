@@ -2,433 +2,132 @@
 <html lang="en">
 
 <head>
-    <meta http-equiv="content-type" content="text/html;charset=UTF-8">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toss King Jupiter</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="../stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com/">
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&family=Oswald:wght@700&display=swap"
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
         rel="stylesheet">
-    <link href="../cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
-
+    <title>Toss King Jupiter</title>
     <style>
-  body,
-  html {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    height: 100%;
-  }
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            font-family: "Roboto Mono", monospace;
+            background-attachment: fixed;
+        }
 
-  .hero {
-    position: relative;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    background: url(img/Gn-IEXvPn2dkGdkAKxtzscAUWpNy7bKhEAUu1jHfWSP6TWlATse4n797efiAoJHte79AooKMaSkT3HaWtwP7dTYcaTxDSQWUZPFElDnz7cSd8_Z-Vrdbh8DjTXlQUG7DGY2gV5iEVtflkMUcdEzj9xCPoOeHymmW1EeifzdYGCG3icoD5GM92Luhnj) no-repeat center center;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    z-index: 2;
-  }
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 115vh;
+            background-image: url("https://blogger.googleusercontent.com/img/a/AVvXsEhDvdhyPRx1spTez1zaxoH9ezjn3SZck1wUjB2NBjaSo16EWXPwb-e2unR_y45HCKzSgoB4pSPRmi-wayTJZ8wjVg9ui9kwmZAaAJaCPWVxoNEBgmR9FUfhBHIjHIHXT0clVdWeBjIwLOw0ajbH1TCYl2cUKN0DAdn8CB_qgakM96Go293EMX-BSd8K4Ig");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.5;
+            z-index: -1;
+        }
 
-  .hero::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: -1;
-  }
+        .first {
+            display: flex;
+            margin-top: 10px;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            text-align: center;
+            z-index: 1;
+        }
 
-  .heading1 {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 2.3rem;
-    color: #fff;
-    margin-top:-120px;
-    margin-bottom: 0;
-  }
+        .first img {
+            border-radius: 50%;
+            width: 200px;
+        }
 
-  h4 {
-    font-family: 'Oswald', sans-serif;
-    font-size: 1.5rem;
-    color: #fff;
-    margin-bottom: 40px;
-  }
+        .first h1 {
+            font-family: "Roboto Mono", monospace;
+            text-align: center;
+        }
 
-  .paragraph,
-  .counter {
-    font-family: 'Open Sans', sans-serif;
-    font-size:1.2rem;
-    color: #ffffff;
-    margin-top: 20px;
-    
-   
-   
-  }
+        .first .pp {
+            color: black;
+            font-family: "Oswald", sans-serif;
+            font-weight: bold;
+        }
 
-  .blink {
-    animation: blink-animation 1.0s steps(5, start) infinite;
-    -webkit-animation: blink-animation 1.0s steps(5, start) infinite;
-  }
-  @keyframes blink-animation {
-    to {
-      visibility: hidden;
-    }
-  }
-  @-webkit-keyframes blink-animation {
-    to {
-      visibility: hidden;
-    }
-  }
+        .join_btn {
+            margin: 10px;
+            padding: 5px 15px;
+            background-color: #038620;
+            border: 2px solid #038620;
+            border-radius: 20px;
+            font-weight: bold;
+            color: white;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 18px;
+            font-family: "Roboto Mono", monospace;
+        }
 
-  #countdown,  #countdown2{
-    font-family: 'Oswald', sans-serif;
-    color:white;
-    margin-top: -15px;
-    margin-bottom: -15px;
-  }
+        .join_btn:hover {
+            background-color: #08A9FF;
+            border: 2px solid #08A9FF;
+        }
 
-  #countdown{
-   font-size: 2rem;
-  }
+        .first h2 {
+            font-size: 15px;
+            font-family: "Oswald", sans-serif;
+        }
 
-  #countdown2{
-   font-size: 1.5rem;
-  }
+        .first .ppp {
+            font-family: "Oswald", sans-serif;
+            margin-top: 5px;
+            color: black;
+        }
 
-  .points {
-    color: #fff;
-    margin-top: 0;
-    
-    
-  }
-
-
-  .points .fa-solid {
-    color:rgb(0, 186, 248);
-  }
-
-  .points ul {
-    list-style-type: none;
-    margin-top: 20px;
-    text-align: left;
-  }
-
-  .points ul li {
-    margin-bottom: 20px;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1rem;
-    font-weight: 600;
-  }
-
- 
-
-  .button1 {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: -80px;
-  }
-
-  .button1 a, .button2 a {
-    font-family: 'Oswald', sans-serif;
-    padding: 15px 30px;
-    background: #FFD700;
-    color: #000;
-    font-size: 40px;
-    line-height: 48px;
-    border: none;
-    cursor: pointer;
-    animation: buttonAnimation 2s infinite;
-    text-decoration: none;
-  }
-
-  .button2 a {
-    display: inline-block;
-    border-radius: 5px;
-  }
-
-  .button1 a {
-    padding: 15px 0;
-    width: 100%;
-    box-sizing: border-box;
-    text-align: center;
-  }
-
-  .button1 a:hover,
-  .button2 a:hover {
-    animation-play-state: paused;
-  }
-
-  .button1 {
-    margin-top: 0px;
-    margin-bottom: 80px;
-}
-
-  @keyframes buttonAnimation {
-    0% {
-      transform: scale(1);
-    }
-
-    50% {
-      transform: scale(1.2);
-    }
-
-    100% {
-      transform: scale(1);
-    }
-  }
-
-  /*Mobile Responsive*/
-  @media (max-width: 480px) {
-    .heading1 {
-      font-size: 2.0rem;
-    }
-
-    h4 {
-      font-size: 1.5rem;
-    }
-
-    .paragraph {
-      font-size: 20px;
-    }
-
-    .button2 a {
-      font-size: 22px;
-      padding: 10px 40px;
-    }
-
-    .button1 a {
-      font-size: 20px;
-      padding: 5px 0;
-    }
-
-
-    .counter {
-      font-size: 1.4rem;
-      margin-top: 15px;
-    }
-  
-    
-   
-  }
-  
-  /* New styles for arranging elements */
-  .content-wrapper {
-    display: flex;
-    align-items: center;
-  }
-
-  .counter {
-   
-    text-align: center;
-  }
-
-  .points {
-    flex: 2;
-  }
-
-  .button4 {
-    
-    display: inline-block;
-    padding: 0.75rem 1.25rem;
-    border-radius: 10rem;
-    color: white;
-    text-transform: uppercase;
-    font-size: 1.2rem;
-    letter-spacing: 0.15rem;
-    transition: all 0.3s;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-    text-decoration: none;
-    margin-top: 3rem;
-   
-   
-  }
-  
-
-
-
-@media only screen and (max-width: 600px) {
-  .glowing-btn{
-    font-size: 1em;
-  }
-}
-@-webkit-keyframes stripe-slide {
-  0% {
-    background-position: 0% 0;
-  }
-  100% {
-    background-position: 100% 0;
-  }
-}
-@keyframes stripe-slide {
-  0% {
-    background-position: 0% 0;
-  }
-  100% {
-    background-position: 100% 0;
-  }
-}
-
-
-
-
-.h2{
- 
-  color:white;
-  margin-bottom: -40px;
-}
-
-
-.back {
-  color: white;
-  border: solid 1px  white;;
-  border-radius: 5px;
-  padding-bottom: 10px;
-  padding-left: 8px;
-  padding-right: 8px;
-  list-style-type: none;
-  animation: buttonAnimationn 1s infinite;
-  text-decoration: none;
-  
-}
-
-
-@keyframes buttonAnimationn {
-  0% {
-     
-      background-color: rgb(0, 195, 255);
-      color: black;
-  }
-  50% {
-      
-      background-color: rgb(0, 0, 0);
-      color: white;
-  }
-  100% {
-     
-      background-color: rgb(0, 195, 255);
-      color: black;
-  }
-}
-.pd{
-  font-size: 30px;
-  padding-top: 10px;
-  border-radius: 30px;
-}
-.button1 a {
- 
-  display: inline-block;
-  font-family: 'Oswald', sans-serif;
-    padding: 15px 30px;
-    width: 360px;
-    color: #fff;
-    font-size: 30px;
-    
-    border: none;
-    border-radius: 40px;
-    cursor: pointer;
-    animation: buttonAnimation 1.5s infinite;
-    text-decoration: none;
-}
-
-.button1 a:hover{
-    animation-play-state: paused;
-}
-
-
-@keyframes buttonAnimation {
-  0%, 20%, 50%, 80%, 100% {
-    background-color: rgb(0, 195, 255);
-    transform: translateY(0);
-    color: black;
-}
-40% { background-color: rgb(0, 0, 0);
-    transform: translateY(-20px);
-    color: white;
-}
-60% { background-color: rgb(0, 0, 0);
-    transform: translateY(-10px);
-    color: white;
-}
-}
-
-.mgbt{
-  margin-bottom: -5px;
-  margin-top: 10px;
-}
+        @media screen and (max-width: 500px) {
+            .first h1 {
+                font-size: 27px;
+            }
+        }
     </style>
+
 </head>
 
 <body>
-    <div class="hero">
-        <div class="conent">
-            <h1 class="heading1">Toss King Jupiter</h1>
-            <h2 class="h2">Best Teligram Channel 🏏🔥</</div>
-        <div class="blink back counter"><span>Free Joining Ends In...</span><span id="countdown">59</span><span
-                style="font-size: 15px;" class="blink">seconds</span></div>
-        <br />
-        <div class="mgbt button1">
-            <a href="https://t.me/+LAFR032VM8tjNjBl" target="_blank" class="back pd">JOIN NOW FOR FREE <i
-                    class="fa-brands fa-telegram" aria-hidden="true"></i></a>
-        </div>
-        <div class="content-wrapper">
-            <div class="points">
-                <ul>
-                    <li><i class="fa-solid fa-caret-right"></i> NIFTY & BANKNIFTY EXPERT ENTRY</li>
-                    <li><i class="fa-solid fa-caret-right"></i> SUPER ENTRY STOCKS</li>
-                </ul>
-            </div>
-        </div>
-        <br />
-        <div class="button1">
-            <a href="https://t.me/+LAFR032VM8tjNjBl" target="_blank" class="back pd">SUBSCRIBE FOR FREE <i
-                    class="fa-brands fa-telegram" aria-hidden="true"></i></a>
-        </div>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Advertisement by Elite Agency</title>
-        <style>
-            .white-text {
-                color: white;
-            }
+    <main>
+        <div class="first">
+            <img src="https://blogger.googleusercontent.com/img/a/AVvXsEjR-WOynXn2VspfFza5sl1TBaj8IP8QT50P-QTFuoWGxfkFQNAr2xkEjtZPeS3semaksNVSHinFhVg_X69pcPl4EmJ6OJNNCfFOybKcpi5sFEvlznQWw4iDOtbz9q5Ko8w9KNEx7setmHSFnNcocsRIjPv_0nWcZrtoJd6XHJPQ6ZA3_0GWhHCwKy8QT0Y"
+                alt="logo">
+            <h1>Toss King Jupiter</h1>
+            <p class="pp">💰 Maximize Your Profits with India’s Best Cricket Predictions 📈🎓
+            </p>
 
-            .yellow-text {
-                color: yellow;
-            }
+            <a href="https://t.me/+LAFR032VM8tjNjBl" target="_blank">
+                <button class="join_btn">
+                    <i class="fa-brands fa-telegram"></i> Join Telegram Channel
+                </button>
+            </a>
+        </div>
 
-            .green-text {
-                color: green;
-            }
-
-            body {
-                font-weight: bold;
-            }
-        </style>
-        <h2><span class="white-text"> Copyright ©️ 2024 ! All rights reserved|</span></h2>
-    </div>
-    <script>
-        let remainingSeconds = 60;
-        function updateCountdown() {
-            document.getElementById("countdown").innerHTML = `${remainingSeconds}`;
-            remainingSeconds -= 1;
-            if (remainingSeconds < 0) {
-                remainingSeconds = 60;
-            }
-        }
-        updateCountdown();
-        const countdownInterval = setInterval(updateCountdown, 1000);
-    </script>
+        <div class="first">
+            <h2>📞 Unlock Daily Free Cricket Predictions 🚀🔔</h2>
+            <p class="ppp">🤝 Become a Part of Our Thriving Community of 70,500 + earners! 💯</p>
+            <p class="ppp" style="color: black;"><strong>100% Free:</strong> Absolutely No Hidden Fees or Charges—Only
+                Pure Value!</p>
+            <a href="https://t.me/+LAFR032VM8tjNjBl" target="_blank">
+                <button class="join_btn">
+                    <i class="fa-brands fa-telegram"></i> Join Telegram Channel
+                </button>
+            </a>
+        </div>
+    </main>
+    <script src="https://kit.fontawesome.com/e1e43c61e6.js" crossorigin="anonymous"></script>
 </body>
+
 </html>
